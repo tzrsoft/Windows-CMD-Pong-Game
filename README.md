@@ -3,4 +3,4 @@
  
 * Requires Visual Studio
 
-![](Images/Pong.png)
+![](Images/gameplay.gif)
