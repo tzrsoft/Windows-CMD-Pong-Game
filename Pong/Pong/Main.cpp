@@ -6,8 +6,7 @@
 
 #include <Windows.h> // for GetAsyncKeyState() and SetConsoleCursorPosition() and GetStdHandle()
 #include <iostream>  // for printf_s() and std::cout
-#include <chrono>    
-#include <thread>	 // for this_thread::sleep_for();
+#include <chrono>    // to measure elapsedTime
 #include <conio.h>   // for _getch()
 
 #include "Random.h"
@@ -73,7 +72,6 @@ int main()
 	while (true)
 	{
 		auto tp2{ std::chrono::system_clock::now() };
-
 		// elapsedTime is difference between the prevous frame that was drawn and the current frame
 		float elapsedTime{ std::chrono::duration<float>(tp2 - tp1).count() };
 		tp1 = tp2;
