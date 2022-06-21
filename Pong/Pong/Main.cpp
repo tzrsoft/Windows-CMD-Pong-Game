@@ -4,16 +4,16 @@
 	Windows CMD pong game also includes ball gravity impact mod.
 */
 
-#include <Windows.h> // for GetAsyncKeyState() and SetConsoleCursorPosition() and GetStdHandle()
-#include <iostream>  // for printf_s() and std::cout
-#include <chrono>    // to measure elapsedTime
-#include <conio.h>   // for _getch()
-
 #include "Random.h"
 #include "Vector2.h"
 #include "Scene.h"
 #include "Ball.h"
 #include "Paddle.h"
+
+#include <Windows.h> // for GetAsyncKeyState() and SetConsoleCursorPosition()
+#include <iostream>  // for printf_s() and std::cout
+#include <chrono>    // to measure elapsedTime
+#include <conio.h>   // for _getch()
 
 int main()
 {
@@ -22,6 +22,7 @@ int main()
 
 	int maxScore{ 15 };
 
+	std::system("cls"); // clear console
 	std::cout << "\n\t\t\tPONG GAME\n\n";
 	std::cout << "\tThe first to reach " << maxScore << " points wins!\n\n";
 	std::cout << "\tleft control: W S\tright control: " << (char)30 << ' ' << (char)31 << "\n\n";
@@ -31,9 +32,8 @@ int main()
 	// ==============================================================================
 	// ~~START~~
 
-	// Note: (0, 0) coordinates is top left corner in our game scene.
-
 	Scene::set(60, 25); // Set scene width and height at start.
+	// Note: (0, 0) coordinates is top left corner in our game scene.
 
 	bool gravityImpact{ false };
 	switch (_getch())
@@ -42,8 +42,7 @@ int main()
 	case 'G':
 		gravityImpact = true;
 	}
-
-	std::system("cls"); // We need to clear the console before proceeding.
+	std::system("cls"); // clear console after input.
 
 	int leftScore{ 0 };
 	int rightScore{ 0 };
