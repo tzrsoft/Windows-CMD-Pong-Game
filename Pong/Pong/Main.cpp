@@ -187,6 +187,7 @@ int main()
 	else
 		std::cout << "\n\n\t\t    RIGHT PLAYER WON!\n";
 
+	std::cout << "\n\t\t   Press ENTER to exit.\n";
 	std::cin.get();
 
 	return 0;
