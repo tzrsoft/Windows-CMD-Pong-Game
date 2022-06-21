@@ -41,6 +41,7 @@ void Scene::draw()
 	{
 		Scene& instance{ getInstance() };
 
+		// Convert index to integer x and y coordinates
 		int x{ i % instance.m_width };
 		int y{ -i / instance.m_width };
 

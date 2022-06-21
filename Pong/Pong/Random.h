@@ -9,6 +9,8 @@ private:
 	static std::mt19937 mt;
 
 public:
+	Random() = delete;
+
 	static int getInt(int min, int max);
 	static bool getBool();
 };
